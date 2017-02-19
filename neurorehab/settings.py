@@ -76,14 +76,30 @@ WSGI_APPLICATION = 'neurorehab.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+"""
+db_name = "neurorehab"
+name = "yc"
+pwd = "YC54dabendan"
+host = "45.32.44.225"
+port = "5433"
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': db_name,
+        'USER': name,
+        'PASSWORD': pwd,
+        'HOST': host,
+        'PORT': port,
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
