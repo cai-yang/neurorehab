@@ -1,0 +1,41 @@
+{%include 'head.html'%}
+<div id="fh5co-work-section" class="fh5co-light-grey-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+				<h2>研究方向</h2>
+				<p>神经肌肉电刺激 (NMES) 系统研发<br>神经假肢的感知功能重建</p>
+			</div>
+		</div>
+		<div class="row">
+			{%for r in research%}
+			<div class="col-md-6 animate-box">
+				<a href="#" class="item-grid text-center">
+					<div class="image" style="background-image: url(/static/images/{{r.pic}})"></div>
+					<div class="v-align">
+						<div class="v-align-middle">
+							<h3 class="title">{{r.title}}</h3>
+							<h5 class="category"></h5>
+						</div>
+					</div>
+				</a>
+			</div>
+			{%endfor%}
+			<!--<div class="col-md-4 animate-box">
+				<a href="#" class="item-grid text-center">
+					<div class="image" style="background-image: url(/static/images/image_6.jpg)"></div>
+					<div class="v-align">
+						<div class="v-align-middle">
+							<h3 class="title">Geographical App</h3>
+							<h5 class="category">Web Application</h5>
+						</div>
+					</div>
+				</a>
+			</div>-->
+			<div class="col-md-12 text-center animate-box">
+				<p><a href="#" class="btn btn-primary with-arrow">更多研究<i class="icon-arrow-right"></i></a></p>
+			</div>
+		</div>
+	</div>
+</div>
+{%include 'foot.html'%}

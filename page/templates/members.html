@@ -1,0 +1,29 @@
+{%include 'head.html'%}
+<div id="fh5co-blog-section" class="fh5co-light-grey-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+        <h2>成员简介</h2>
+        <p> </p>
+      </div>
+    </div>
+    <div class="row">
+      {% for m in member %}
+      <div class="col-md-4 col-sm-6 animate-box">
+        <a href="/members/{{m.pk}}/" class="item-grid">
+          <div class="image" style="background-image: url(/static/images/{{m.pic}})"></div>
+          <div class="v-align">
+            <div class="v-align-middle">
+              <h3 class="name">{{m.name}}</h3>
+              <h5 class="title">{{m.title}}</h5>
+              <h5 class="title">E-mail: {{m.email}}</h5>
+              <p>{{m.simple}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+{%include 'foot.html'%}

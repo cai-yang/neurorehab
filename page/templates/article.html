@@ -1,0 +1,34 @@
+<h1>{{a.title}}</h1>
+<p class="post-meta">Posted on {{a.date_add|date:"Y-m-d"}}  （{{a.place}}）</p>
+
+
+<p class="post-meta">Description: {{a.description}}</p>
+
+
+
+<p class="post-meta">Categories:
+
+<!-- <a href=" | prepend: site.baseurl}}" title="news">news</a>&nbsp; -->
+<!--news&nbsp;-->
+
+<!-- <a href=" | prepend: site.baseurl}}" title="Ruijin">Ruijin</a>&nbsp; -->
+<!--Ruijin&nbsp;-->
+{{a.cate}}
+
+
+</p>
+
+</header>
+
+<p>{{a.content}}</p>
+
+<p><img src="/static/images/{{a.pic}}" alt="蓝宁教授接过证书" />
+{{a.pic_disc}}</p>
+
+{%if a.previous_num%}
+<a href="/article/{{a.previous_num}}/">上一篇</a>
+{%endif%}
+{%if a.next_num%}
+<a href="/article/{{a.next_num}}/">下一篇</a>
+{%endif%}
+<a href="/hottopics/">返回</a>

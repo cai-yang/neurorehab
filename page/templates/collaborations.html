@@ -1,0 +1,10 @@
+{%include 'head.html'%}
+<div id="fh5co-blog-section" class="fh5co-light-grey-section">
+  <div class="container">
+    <h1>科研合作</h1>
+    {%for c in collaboration%}
+    <h3>{{c.name}}</h3>
+    {%endfor%}
+  </div>
+</div>
+{%include 'foot.html'%}

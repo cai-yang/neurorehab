@@ -1,0 +1,15 @@
+{%include "head.html"%}
+<div id="fh5co-blog-section" class="fh5co-light-grey-section">
+  <div class="container">
+<h1>成果展示</h1>
+<h3>发表论文 (经同行评议)</h3>
+{%for a in achievement%}
+<p><b><a href="{{a.link}}">{{a.title}}</a></b></p>
+<p>{{a.author}}</p>
+<p>{{a.publish}} [<a href="{{a.doi}}">doi</a>]</p>
+<p>File: [<a href="{{a.pdf}}">PDF</a>]</p>
+<br>
+{%endfor%}
+  </div>
+</div>
+{%include "foot.html"%}

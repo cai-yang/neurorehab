@@ -1,0 +1,32 @@
+{% include 'head.html' %}
+<div id="fh5co-blog-section" class="fh5co-light-grey-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+        <h2>学术动态</h2>
+        <p> </p>
+      </div>
+    </div>
+    <div class="row">
+      {% for a in A %}
+      <div class="col-md-12 col-sm-6 animate-box">
+        <a href="/article/{{a.pk}}/" class="item-grid">
+          <div class="image" style="background-image: url(/static/images/{{a.pic}})"></div>
+          <div class="v-align">
+            <div class="v-align-middle">
+              <h3 class="title">{{a.title}}</h3>
+              <h5><span>{{a.cate}} {{a.cate2}}</span>：{{a.description}}</h5>
+              <h5 class="date"><span>{{a.date_add|date:"Y-m-d"}}</span> | {{a.place}}</h5>
+              <p>{{a.content}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+      <div class="col-md-12 text-center animate-box">
+        <p><a href="#" class="btn btn-primary with-arrow">更多动态 <i class="icon-arrow-right"></i></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% include 'foot.html' %}
