@@ -1,28 +1,54 @@
-<h1>{{a.title}}</h1>
-<p class="post-meta">Posted on {{a.date_add|date:"Y-m-d"}}  （{{a.place}}）</p>
+{%include 'head.html'%}
+<div id="fh5co-blog-section" class="fh5co-light-grey-section">
+  <div class="container">
+    <div class="col-md-12 col-md-offset-0 text-center fh5co-heading animate-box">
+      <h2>{{a.title}}</h2>
+    </div>
+    <div class="col-md-12 col-sm-12 animate-box">
+      <a class="item-grid">
+        <div class="v-align">
+          <div class="v-align-middle">
+            <p class="post-meta">Posted on {{a.date_add|date:"Y-m-d"}}  （{{a.place}}）</p>
 
 
-<p class="post-meta">Description: {{a.description}}</p>
+            <p class="post-meta">Description: {{a.description}}</p>
 
 
 
-<p class="post-meta">Categories:
+            <p class="post-meta">Categories:
 
-{{a.cate}}
+            {{a.cate}} {{a.cate2}}
 
-</p>
+            </p>
 
-</header>
+            <p>{{a.content}}</p>
 
-<p>{{a.content}}</p>
 
-<p><img src="/static/images/{{a.pic}}" alt="" />
-{{a.pic_disc}}</p>
-
-{%if a.previous_num%}
-<a href="/article/{{a.previous_num}}/">上一篇</a>
-{%endif%}
-{%if a.next_num%}
-<a href="/article/{{a.next_num}}/">下一篇</a>
-{%endif%}
-<a href="/hottopics/">返回</a>
+            <div class="image" style="background-image: url(/static/images/{{a.pic}})"></div>
+            <h5>△{{a.pic_disc}}</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    {%if a.previous_num%}
+    <div class="col-md-4 text-center animate-box">
+      <p><a href="/article/{{a.previous_num}}/" class="btn btn-primary with-arrow">上一篇<i class="icon-arrow-right"></i></a></p>
+    </div>
+    {%else%}
+    <div class="col-md-4 text-center animate-box">
+    </div>
+    {%endif%}
+    {%if a.next_num%}
+    <div class="col-md-4 text-center animate-box">
+      <p><a href="/article/{{a.next_num}}/" class="btn btn-primary with-arrow">下一篇<i class="icon-arrow-right"></i></a></p>
+    </div>
+    {%else%}
+    <div class="col-md-4 text-center animate-box">
+    </div>
+    {%endif%}
+    <div class="col-md-4 text-center animate-box">
+      <p><a href="/hottopics/" class="btn btn-primary with-arrow">返回<i class="icon-arrow-right"></i></a></p>
+    </div>
+</div>
+</div>
+{%include 'foot.html'%}
